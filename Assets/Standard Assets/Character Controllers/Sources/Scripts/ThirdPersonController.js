@@ -74,7 +74,7 @@ private var moveSpeed = 0.0;
 private var collisionFlags : CollisionFlags; 
 
 // Are we jumping? (Initiated with jump button and not grounded yet)
-private var jumping = false;
+public var jumping = false;
 private var jumpingReachedApex = false;
 
 // Are we moving backwards (This locks the camera to not do a 180 degree spin)
@@ -138,6 +138,9 @@ public var jumpPoseAnimation : AnimationClip;
 			
 }
 
+function GetIsJumping () {
+	return jumping;
+}
 
 function UpdateSmoothedMovementDirection ()
 {

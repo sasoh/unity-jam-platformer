@@ -18,16 +18,13 @@ function OnGUI() {
 		lastSurvived = Time.timeSinceLevelLoad;
 	}
 	
-	var shiftSign = 0.0;
-	
 	if (showGameOver == 1) {
-		shiftSign = Screen.width / 2 - gameOverH;
 		if (GUI.Button(Rect((Screen.width - gameOverW) / 2, (Screen.height - gameOverH / 2) / 2, gameOverW, gameOverH), "You died\nRestart Level")) {
       		Application.LoadLevel (Application.loadedLevelName);
    		}
 	}
 	
-	GUI.Box(Rect(Screen.width / 2 - gameOverW, gameOverH + shiftSign, 2 * gameOverW, gameOverH / 2), "Survived for " + lastSurvived.ToString("f2") + " seconds");
+	GUI.Box(Rect(Screen.width / 2 - gameOverW, gameOverH, 2 * gameOverW, gameOverH / 2), "Survived for " + lastSurvived.ToString("f2") + " seconds");
 }	
 
 function Start () {
